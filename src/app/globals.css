@@ -1,38 +1,68 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0f;
-  --foreground: #e8e8e8;
-  --accent: #00ff88;
-  --accent-glow: rgba(0, 255, 136, 0.3);
-  --card-bg: rgba(18, 18, 30, 0.85);
-  --card-border: rgba(255, 255, 255, 0.06);
+  --bg-deep: #0f0a1a;
+  --bg-surface: #1a1030;
+  --bg-elevated: #221840;
+  --text-primary: #f0e6ff;
+  --text-secondary: #b4a0d0;
+  --text-muted: #7a6a90;
+  --accent-pink: #f472b6;
+  --accent-green: #34d399;
+  --accent-yellow: #fbbf24;
+  --accent-purple: #a78bfa;
+  --glow-pink: rgba(244, 114, 182, 0.25);
+  --glow-green: rgba(52, 211, 153, 0.25);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: var(--bg-deep);
+  --color-foreground: var(--text-primary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-surface) 50%, #120825 100%);
+  color: var(--text-primary);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
 @layer utilities {
-  .glass-card {
-    background: var(--card-bg);
-    backdrop-filter: blur(12px);
-    border: 1px solid var(--card-border);
+  .game-card {
+    background: var(--bg-elevated);
+    border: 1px solid rgba(255, 255, 255, 0.06);
   }
-  .glow-border {
-    box-shadow: 0 0 15px var(--accent-glow);
+  .game-card:hover {
+    border-color: rgba(244, 114, 182, 0.3);
+    box-shadow: 0 0 20px var(--glow-pink);
   }
-  .text-glow {
-    text-shadow: 0 0 10px var(--accent-glow);
+  .btn-primary {
+    background: linear-gradient(135deg, var(--accent-pink), #e040a0);
+    color: #fff;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+  .btn-primary:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px var(--glow-pink);
+  }
+  .btn-secondary {
+    background: var(--bg-elevated);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+  .btn-secondary:hover {
+    border-color: rgba(244, 114, 182, 0.3);
+    color: var(--text-primary);
+  }
+  .tag-badge {
+    padding: 2px 8px;
+    border-radius: 9999px;
+    font-size: 10px;
+    font-weight: 600;
   }
   .scrollbar-thin::-webkit-scrollbar {
     width: 6px;
@@ -41,7 +71,7 @@ body {
     background: rgba(255, 255, 255, 0.02);
   }
   .scrollbar-thin::-webkit-scrollbar-thumb {
-    background: rgba(0, 255, 136, 0.3);
+    background: rgba(244, 114, 182, 0.3);
     border-radius: 3px;
   }
 }

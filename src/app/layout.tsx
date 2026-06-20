@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="zh-TW" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col scrollbar-thin bg-[#0a0a0f] text-[#e8e8e8]">
+      <body className="min-h-full flex flex-col scrollbar-thin">
         <OverlayProvider>
           <SiteShell>{children}</SiteShell>
         </OverlayProvider>

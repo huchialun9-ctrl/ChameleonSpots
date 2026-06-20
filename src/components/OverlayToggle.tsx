@@ -8,11 +8,14 @@ export default function OverlayToggle() {
   return (
     <button
       onClick={() => setOverlay(!overlay)}
-      className={`fixed z-[60] flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border transition-all ${
-        overlay
-          ? "top-4 right-4 bg-red-500/20 border-red-400/30 text-red-400"
-          : "top-20 right-4 bg-white/5 border-white/10 text-white/50 hover:border-white/20 hover:text-white/70"
-      }`}
+      className="fixed z-[60] flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all"
+      style={{
+        background: overlay ? "rgba(239,68,68,0.2)" : "rgba(255,255,255,0.04)",
+        border: `1px solid ${overlay ? "rgba(239,68,68,0.3)" : "rgba(255,255,255,0.06)"}`,
+        color: overlay ? "#ef4444" : "var(--text-muted)",
+        top: overlay ? "1rem" : "5rem",
+        right: "1rem",
+      }}
       title={overlay ? "離開開台模式" : "開台模式 / 第二螢幕"}
     >
       <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
