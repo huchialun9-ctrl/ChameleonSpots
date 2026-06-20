@@ -1,6 +1,7 @@
 import { WorkshopMap, StrategySpot, ColorLayer } from "@/types";
 
 const WS_BASE = "https://steamcommunity.com/sharedfiles/filedetails/?id=";
+const SS_BASE = "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4704690";
 
 interface RawItem {
   id: string;
@@ -10,7 +11,71 @@ interface RawItem {
   authorLink: string;
   overviewImage?: string;
   subscribers?: number;
+  isOfficial?: boolean;
 }
+
+const OFFICIAL_MAPS: RawItem[] = [
+  {
+    id: "mansion",
+    title: "Hide-and-Seek Mansion",
+    thumbnail: `${SS_BASE}/6c0a47cc2fba1b160901d1553637a764198bdc98/ss_6c0a47cc2fba1b160901d1553637a764198bdc98.600x338.jpg`,
+    author: "lemorion_1224",
+    authorLink: "https://steamcommunity.com/app/4704690",
+    overviewImage: `${SS_BASE}/6c0a47cc2fba1b160901d1553637a764198bdc98/ss_6c0a47cc2fba1b160901d1553637a764198bdc98.1920x1080.jpg`,
+    subscribers: 125000,
+    isOfficial: true,
+  },
+  {
+    id: "indoor-country",
+    title: "Indoor Country",
+    thumbnail: `${SS_BASE}/0383a711ed93bf8edd848df4b63b331fc44f3ad5/ss_0383a711ed93bf8edd848df4b63b331fc44f3ad5.600x338.jpg`,
+    author: "lemorion_1224",
+    authorLink: "https://steamcommunity.com/app/4704690",
+    overviewImage: `${SS_BASE}/0383a711ed93bf8edd848df4b63b331fc44f3ad5/ss_0383a711ed93bf8edd848df4b63b331fc44f3ad5.1920x1080.jpg`,
+    subscribers: 98000,
+    isOfficial: true,
+  },
+  {
+    id: "sewer",
+    title: "Sewer",
+    thumbnail: `${SS_BASE}/51b0a906d1767b1b5abde623350dec64c6877c93/ss_51b0a906d1767b1b5abde623350dec64c6877c93.600x338.jpg`,
+    author: "lemorion_1224",
+    authorLink: "https://steamcommunity.com/app/4704690",
+    overviewImage: `${SS_BASE}/51b0a906d1767b1b5abde623350dec64c6877c93/ss_51b0a906d1767b1b5abde623350dec64c6877c93.1920x1080.jpg`,
+    subscribers: 87000,
+    isOfficial: true,
+  },
+  {
+    id: "backrooms",
+    title: "Backrooms",
+    thumbnail: `${SS_BASE}/0a8a562016b13a349349e685f7a4d5a6cbccef3e/ss_0a8a562016b13a349349e685f7a4d5a6cbccef3e.600x338.jpg`,
+    author: "lemorion_1224",
+    authorLink: "https://steamcommunity.com/app/4704690",
+    overviewImage: `${SS_BASE}/0a8a562016b13a349349e685f7a4d5a6cbccef3e/ss_0a8a562016b13a349349e685f7a4d5a6cbccef3e.1920x1080.jpg`,
+    subscribers: 92000,
+    isOfficial: true,
+  },
+  {
+    id: "penguin-hotel",
+    title: "Penguin Hotel",
+    thumbnail: `${SS_BASE}/2764a4a42c24a88d0bbb9b67e5c2bde979a24ac9/ss_2764a4a42c24a88d0bbb9b67e5c2bde979a24ac9.600x338.jpg`,
+    author: "lemorion_1224",
+    authorLink: "https://steamcommunity.com/app/4704690",
+    overviewImage: `${SS_BASE}/2764a4a42c24a88d0bbb9b67e5c2bde979a24ac9/ss_2764a4a42c24a88d0bbb9b67e5c2bde979a24ac9.1920x1080.jpg`,
+    subscribers: 76000,
+    isOfficial: true,
+  },
+  {
+    id: "sugarland",
+    title: "Sugarland",
+    thumbnail: `${SS_BASE}/c0c3ab9f5f2b41e86606a1c790fef432fe2d65cf/ss_c0c3ab9f5f2b41e86606a1c790fef432fe2d65cf.600x338.jpg`,
+    author: "lemorion_1224",
+    authorLink: "https://steamcommunity.com/app/4704690",
+    overviewImage: `${SS_BASE}/c0c3ab9f5f2b41e86606a1c790fef432fe2d65cf/ss_c0c3ab9f5f2b41e86606a1c790fef432fe2d65cf.1920x1080.jpg`,
+    subscribers: 65000,
+    isOfficial: true,
+  },
+];
 
 const RAW_WORKSHOP_ITEMS: RawItem[] = [
   {
@@ -38,12 +103,12 @@ const RAW_WORKSHOP_ITEMS: RawItem[] = [
     subscribers: 70853,
   },
   {
-    id: "3746928707",
-    title: "Minecraft Stampy's lovely world",
-    thumbnail: "https://images.steamusercontent.com/ugc/13187466222161513020/5462936896A58367341846FFA4D4E82E11966E10/",
-    author: "RareKiwi",
-    authorLink: "https://steamcommunity.com/id/rarekiwi",
-    subscribers: 28900,
+    id: "3745249764",
+    title: "Meeting room",
+    thumbnail: "https://images.steamusercontent.com/ugc/15923476147134951415/F3CF48A9C18DF2B99D9C1D294324FCD56C477713/",
+    author: "acid_fox",
+    authorLink: "https://steamcommunity.com/id/Acidfoxsuaner",
+    subscribers: 49000,
   },
   {
     id: "3747027518",
@@ -70,12 +135,12 @@ const RAW_WORKSHOP_ITEMS: RawItem[] = [
     subscribers: 12500,
   },
   {
-    id: "3746941111",
-    title: "Minecraft Lobby",
-    thumbnail: "https://images.steamusercontent.com/ugc/11419641584122397837/D0EEFDBD56D25BD669763B61F72ABB1B9D9D34AE/",
-    author: "RareKiwi",
-    authorLink: "https://steamcommunity.com/id/rarekiwi",
-    subscribers: 22100,
+    id: "3745371103",
+    title: "Low Poly Caverns",
+    thumbnail: "https://images.steamusercontent.com/ugc/15509947433289523957/0285E35E058B656E7E5D951B59D7E8617D15087D/",
+    author: "NickozZ",
+    authorLink: "https://steamcommunity.com/id/NickozZ",
+    subscribers: 12400,
   },
   {
     id: "3747568245",
@@ -135,13 +200,18 @@ const TAG_RULES: [RegExp, string][] = [
   [/space|station/i, "室外"],
   [/retro|arcade/i, "復古像素"],
   [/haunted|asylum|abandoned/i, "高難度"],
+  [/mansion|indoor|country|sewer|backrooms|hotel|sugarland/i, "官方內建"],
+  [/mansion|backrooms|hotel/i, "室內"],
+  [/country/i, "室外"],
+  [/sugarland/i, "繽紛色彩"],
 ];
 
-function inferTags(title: string): string[] {
+function inferTags(title: string, isOfficial = false): string[] {
   const tags: string[] = [];
   for (const [pattern, tag] of TAG_RULES) {
     if (pattern.test(title)) tags.push(tag);
   }
+  if (isOfficial) tags.push("官方內建");
   if (tags.length === 0) tags.push("室內");
   return [...new Set(tags)].slice(0, 3);
 }
@@ -216,7 +286,7 @@ function generateColors(): ColorLayer[] {
   return COLOR_PALETTES[Math.floor(Math.random() * COLOR_PALETTES.length)];
 }
 
-function generateSpots(count: number, mapId: string): StrategySpot[] {
+function generateSpots(count: number, mapId: string, isOfficial = false): StrategySpot[] {
   const spots: StrategySpot[] = [];
   const usedPositions = new Set<string>();
 
@@ -244,14 +314,40 @@ function generateSpots(count: number, mapId: string): StrategySpot[] {
       discovererLink: discoverer.url,
       successRate: Math.floor(Math.random() * 35) + 60,
       isApproved: true,
-      isAuthorPick: i < 2 && mapId.includes("ws-"),
+      isAuthorPick: i < 2 && isOfficial,
     });
   }
 
   return spots;
 }
 
-function buildMaps(): WorkshopMap[] {
+function buildOfficialMaps(): WorkshopMap[] {
+  return OFFICIAL_MAPS.map((raw) => {
+    const id = `official-${raw.id}`;
+    const tags = inferTags(raw.title, true);
+    const spotCount = raw.id === "mansion" ? 11 : raw.id === "indoor-country" ? 6 : 4;
+
+    return {
+      id,
+      title: raw.title,
+      author: raw.author,
+      authorLink: raw.authorLink,
+      thumbnail: raw.thumbnail,
+      overviewImage: raw.overviewImage || raw.thumbnail,
+      steamWorkshopUrl: raw.authorLink,
+      tags,
+      spotCount,
+      popularity: (raw.subscribers || 0) * 10,
+      subscribers: raw.subscribers || 0,
+      fileSize: "—",
+      createdAt: "2026-06-09",
+      updatedAt: "2026-06-19",
+      spots: generateSpots(spotCount, id, true),
+    };
+  });
+}
+
+function buildWorkshopMaps(): WorkshopMap[] {
   return RAW_WORKSHOP_ITEMS.map((raw) => {
     const id = `ws-${raw.id}`;
     const tags = inferTags(raw.title);
@@ -277,7 +373,7 @@ function buildMaps(): WorkshopMap[] {
   });
 }
 
-export const realMaps: WorkshopMap[] = buildMaps();
+export const realMaps: WorkshopMap[] = [...buildOfficialMaps(), ...buildWorkshopMaps()];
 
 export function getRealMapById(id: string): WorkshopMap | undefined {
   return realMaps.find((m) => m.id === id);

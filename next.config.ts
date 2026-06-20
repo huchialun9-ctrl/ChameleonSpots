@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
         hostname: "steamuserimages-a.akamaihd.net",
         pathname: "/ugc/**",
       },
+      {
+        protocol: "https",
+        hostname: "shared.akamai.steamstatic.com",
+        pathname: "/store_item_assets/**",
+      },
     ],
   },
 };
